@@ -1,0 +1,1 @@
+Place your alzheimer model here as alzheimer_model.h5 or configure MODEL_URL in Streamlit secrets.
