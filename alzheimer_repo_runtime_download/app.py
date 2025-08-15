@@ -67,10 +67,10 @@ if uploaded_file:
             preds = MODEL.predict(arr)[0]
             classes = ['MildDemented','ModerateDemented','NonDemented','VeryMildDemented']
             idx = int(np.argmax(preds))
-            st.success(f\"Prediction: **{classes[idx]}** (Confidence: {preds[idx]*100:.2f}%)\")
+            st.success(f"Prediction: **{classes[idx]}** (Confidence: {preds[idx]*100:.2f}%)")
             st.bar_chart({c: float(p) for c,p in zip(classes, preds)})
         except Exception as e:
-            st.error(f\"Prediction failed: {e}\")
+            st.error(f"Prediction failed: {e}")
     else:
         # Demo heuristic: brightness-based
         gray = np.array(img.convert('L').resize((128,128))) / 255.0
@@ -83,4 +83,4 @@ if uploaded_file:
             label='MildDemented'
         else:
             label='ModerateDemented'
-        st.info(f\"Demo prediction: **{label}** (replace with a real model for accurate results)\")        
+        st.info(f"Demo prediction: **{label}** (replace with a real model for accurate results)")        
